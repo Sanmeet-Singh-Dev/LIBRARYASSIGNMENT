@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".AppActivity">
 
-    <TextView
-        android:id="@+id/textView2"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="APP"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="196dp" />
+        android:layout_height="match_parent"
+        android:id="@+id/EntertainRecycler"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

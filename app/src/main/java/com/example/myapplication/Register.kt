@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class Register : AppCompatActivity() {
@@ -19,14 +18,18 @@ class Register : AppCompatActivity() {
         btnRegister.setOnClickListener {
 
 
-            if (editEmail.text!!.trim().isNotEmpty() || editPassword.text!!.trim().isNotEmpty() || editCPassword.text!!.trim().isNotEmpty()) {
+            if (editEmail.text!!.trim().isNotEmpty() || editPassword.text!!.trim().isNotEmpty() || fbeMessage.text!!.trim().isNotEmpty()) {
                 registerUser()
+                Toast.makeText(this, "Registration is Successful", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(this, "Input not provided", Toast.LENGTH_LONG).show()
             }
+
         }
         libLogin.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
@@ -51,13 +54,13 @@ class Register : AppCompatActivity() {
     override fun onStart(){
         super.onStart()
         val user = auth.currentUser;
-     //    if(user!=null){
+         if(user!=null){
 
-       //      val intent = Intent (this, Homepage::class.java)
-         //    startActivity(intent)
-        // }
-       // else{
-        //     Log.e("user status","user null")
-        // }
+             val intent = Intent (this, Homepage::class.java)
+             startActivity(intent)
+         }
+        else{
+            Log.e("user status","user null")
+         }
     }
 }

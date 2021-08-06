@@ -11,9 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".AppActivity"></activity>
-        <activity android:name=".BooksActivity" />
-        <activity android:name=".EntertainmentActivity" />
+        <activity android:name=".FeedbackActivity"
+            android:label="Feedback"></activity>
+        <activity android:name=".AppActivity"
+            android:label="App Section"/>
+        <activity android:name=".BooksActivity"
+            android:label="Book Section"/>
+        <activity android:name=".EntertainmentActivity"
+            android:label="Entertainment Section"/>
+        <activity android:name=".LoginActivity"
+            android:label="Login/Register"/>
         <activity
             android:name=".Homepage"
             android:label="Homepage" />
@@ -21,8 +28,8 @@
             android:name=".Register"
             android:label="Registration" />
         <activity
-            android:name=".MainActivity"
-            android:label="Login/Register">
+            android:name=".IntroductionAnim"
+            android:label="Library App">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
